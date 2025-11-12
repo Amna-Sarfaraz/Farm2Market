@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmers Input</title>
+</head>
+<body>
+    <h2>Enter Farmers Data (one per line, format: Name,Crop,Region,Price)</h2>
+    <form method="post" action="{% url 'results' %}">
+        {% csrf_token %}
+        <textarea name="farmers_input" rows="10" cols="50"></textarea><br>
+        <h3>Enter Buyers Data (one per line, format: Crop,Region,Budget)</h3>
+        <textarea name="buyers_input" rows="5" cols="50"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

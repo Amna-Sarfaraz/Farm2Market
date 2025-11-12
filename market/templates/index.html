@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Agro Connect</title>
+</head>
+<body>
+<h1>Smart Agro Connect</h1>
+
+<h2>Search Farmers</h2>
+<form method="post" action="{% url 'search' %}">
+    {% csrf_token %}
+    Keyword: <input type="text" name="keyword" required>
+    Search Type: 
+    <select name="search_type">
+        <option value="1">Linear</option>
+        <option value="2">Binary</option>
+    </select>
+    <button type="submit">Search</button>
+</form>
+
+<h2>Sort Farmers</h2>
+<form method="post" action="{% url 'sort' %}">
+    {% csrf_token %}
+    Sort by: 
+    <select name="sort_choice">
+        <option value="1">Price</option>
+        <option value="2">Crop</option>
+        <option value="3">Region</option>
+    </select>
+    Order: 
+    <select name="order">
+        <option value="1">Ascending</option>
+        <option value="2">Descending</option>
+    </select>
+    <button type="submit">Sort</button>
+</form>
+
+<h2>Match Buyers</h2>
+<form method="post" action="{% url 'match' %}">
+    {% csrf_token %}
+    Crop: <input type="text" name="crop" required>
+    Region: <input type="text" name="region" required>
+    Budget: <input type="number" step="0.01" name="budget" required>
+    <button type="submit">Match</button>
+</form>
+
+</body>
+</html>

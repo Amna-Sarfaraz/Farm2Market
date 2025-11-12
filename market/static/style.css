@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1, h2, h3 {
+    color: green;
+}
+textarea {
+    width: 80%;
+}
+button {
+    margin-top: 10px;
+    padding: 5px 15px;
+}
