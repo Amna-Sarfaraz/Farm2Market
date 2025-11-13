@@ -1,48 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Smart Agro Connect</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm2Market - Direct Farm to Buyer</title>  
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-<h1>Smart Agro Connect</h1>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Farm2Market</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="#product">Products</a></li>
+            <li><a href="farmer.html">Farmer</a></li>
+            <li><a href="#about">About</a></li>
 
-<h2>Search Farmers</h2>
-<form method="post" action="{% url 'search' %}">
-    {% csrf_token %}
-    Keyword: <input type="text" name="keyword" required>
-    Search Type: 
-    <select name="search_type">
-        <option value="1">Linear</option>
-        <option value="2">Binary</option>
-    </select>
-    <button type="submit">Search</button>
-</form>
+        </ul>
+    </nav>
 
-<h2>Sort Farmers</h2>
-<form method="post" action="{% url 'sort' %}">
-    {% csrf_token %}
-    Sort by: 
-    <select name="sort_choice">
-        <option value="1">Price</option>
-        <option value="2">Crop</option>
-        <option value="3">Region</option>
-    </select>
-    Order: 
-    <select name="order">
-        <option value="1">Ascending</option>
-        <option value="2">Descending</option>
-    </select>
-    <button type="submit">Sort</button>
-</form>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Fresh from Farmers to You</h1>
+        <p>Direct farm produce, no middleman, fair prices</p>
+        <button>Shop Now</button>
+    </div>
 
-<h2>Match Buyers</h2>
-<form method="post" action="{% url 'match' %}">
-    {% csrf_token %}
-    Crop: <input type="text" name="crop" required>
-    Region: <input type="text" name="region" required>
-    Budget: <input type="number" step="0.01" name="budget" required>
-    <button type="submit">Match</button>
-</form>
+    <!-- How It Works -->
+    <section>
+        <h2>How It Works</h2>
+        <div class="how-it-works">
+            <div class="card">
+                <img src="f2.jpg" alt="Farmer">
+                <h3>Farmers Upload Products</h3>
+                <p>Farmers list their crops directly on the platform.</p>
+            </div>
+            <div class="card">
+                <img src="f3.jpeg" alt="Order">
+                <h3>Buyers Place Orders</h3>
+                <p>Buyers browse products and place orders easily.</p>
+            </div>
+            <div class="card">
+                <img src="download (3).jpeg" alt="Delivery">
+                <h3>Direct Delivery</h3>
+                <p>Products are delivered from local hubs to buyers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="product">
+        <h2>Featured Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="t.jpeg" alt="Tomatoes">
+                <h3>Fresh Tomatoes</h3>
+                <p>Price: $2/kg</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="p.jpeg" alt="Potatoes">
+                <h3>Potatoes</h3>
+                <p>Price: $1.5/kg</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="c.jpeg" alt="Carrots">
+                <h3>Carrots</h3>
+                <p>Price: $2.5/kg</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="c1.jpeg" alt="Carrots">
+                <h3>Cabbage</h3>
+                <p>Price: $2.5/kg</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="b.jpeg" alt="Carrots">
+                <h3>Bringle</h3>
+                <p>Price: $2.5/kg</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+        <h2>Why Choose Farm2Market?</h2>
+        <div class="benefits">
+            <div class="card">
+                <img src="f4.jpeg" alt="Fair Price">
+                <h3>Fair Prices</h3>
+                <p>Direct sales ensure farmers earn more and buyers pay less.</p>
+            </div>
+            <div class="card">
+                <img src="t1.jpeg" alt="Transparency">
+                <h3>Price Transparency</h3>
+                <p>Know the exact cost and avoid hidden charges.</p>
+            </div>
+            <div class="card">
+                <img src="d.jpg" alt="Tracking">
+                <h3>Order Tracking</h3>
+                <p>Track your order from farm to your doorstep.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <h2>Testimonials</h2>
+        <div class="testimonials">
+            <div class="card">
+                <p>"Farm2Hub helped me sell my produce directly and earn more. Highly recommended!"</p>
+                <h4>- Farmer A</h4>
+            </div>
+            <div class="card">
+                <p>"I get fresh vegetables at a fair price, no middleman involved. Love it!"</p>
+                <h4>- Buyer B</h4>
+            </div>
+            <div class="card">
+                <p>"Very easy to use platform. The delivery was fast and reliable."</p>
+                <h4>- Vendor C</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <p>&copy; 2025 Farm2Market. All rights reserved.</p>
+        <p>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
 
 </body>
 </html>
