@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-<h1>{{ title }}</h1>
-<pre>{{ output }}</pre>
-<a href="{% url 'index' %}">Go Back</a>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Farm2Market</div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'search_page' %}">Search</a></li>
+            <li><a href="#product">Products</a></li>
+            <li><a href="{% url 'farmers' %}">Farmer</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search / Result Section -->
+    <section class="search-page">
+        <h1>{{ title }}</h1>
+        <p class="subtitle">Results from your search, sort, or match operation.</p>
+
+        {% if output_lines %}
+            <div class="product-list">
+                {% for product in output_lines %}
+                    <div class="product-card">
+                        <h3>{{ product.crop }}</h3>
+                        <p><strong>Farmer:</strong> {{ product.farmer.name }}</p>
+                        <p><strong>Region:</strong> {{ product.farmer.region }}</p>
+                        <p><strong>Price:</strong> ${{ product.price }}</p>
+                        {% if product.expiry_date %}
+                            <p><strong>Expiry:</strong> {{ product.expiry_date }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="error">No results found.</p>
+        {% endif %}
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="{% url 'search_page' %}" class="btn-fill">Go Back</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <p>&copy; 2025 Farm2Market. All rights reserved.</p>
+        <p>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
 </body>
 </html>

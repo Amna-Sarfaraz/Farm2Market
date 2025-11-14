@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="logo">Farm2Market</div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'search_page' %}">Search</a></li>
+            <li><a href="#product">Products</a></li>
+            <li><a href="{% url 'farmers' %}">Farmer</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+   <section class="search_page">
+        <h1>Search Farmers / Products</h1>
+        <p class="subtitle">Use the forms below to search, sort, or match buyers</p>
+
+        <form action="{% url 'search' %}" method="post" class="search-controls">
+            {% csrf_token %}
+            <input type="text" name="keyword" placeholder="Enter keyword">
+            <select name="search_type">
+                <option value="1">First Match</option>
+                <option value="2">All Matches</option>
+            </select>
+            <button type="submit" class="btn-fill">Search</button>
+        </form>
+        <form action="{% url 'sort' %}" method="post" class="sort-controls">
+            {% csrf_token %}
+            <select name="sort_choice">
+                <option value="1">Sort by Price</option>
+                <option value="2">Sort by Crop</option>
+                <option value="3">Sort by Region</option>
+            </select>
+            <select name="order">
+                <option value="1">Ascending</option>
+                <option value="2">Descending</option>
+            </select>
+            <button type="submit" class="btn-fill">Sort</button>
+        </form>
+        <form action="{% url 'match' %}" method="post" class="match-controls">
+            {% csrf_token %}
+            <input type="text" name="crop" placeholder="Crop">
+            <input type="text" name="region" placeholder="Region">
+            <input type="number" name="budget" placeholder="Budget">
+            <button type="submit" class="btn-fill">Match Buyers</button>
+        </form>
+    </section>
+    <footer id="about">
+        <p>&copy; 2025 Farm2Market. All rights reserved.</p>
+        <p>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+</body>
+</html>

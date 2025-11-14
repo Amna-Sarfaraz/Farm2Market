@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm2Market - Direct Farm to Buyer</title>  
-    <link rel="stylesheet" href="style.css">
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 
 </head>
 <body>
@@ -13,9 +15,9 @@
         <div class="logo">Farm2Market</div>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="search.html">Search</a></li>
+            <li><a href="{% url 'search_page' %}">Search</a></li>
             <li><a href="#product">Products</a></li>
-            <li><a href="farmer.html">Farmer</a></li>
+            <li><a href="{% url 'farmers' %}">Farmer</a></li>
             <li><a href="#about">About</a></li>
 
         </ul>
@@ -33,17 +35,17 @@
         <h2>How It Works</h2>
         <div class="how-it-works">
             <div class="card">
-                <img src="f2.jpg" alt="Farmer">
+                <img src="{% static 'f2.jpg' %}" alt="Farmer">
                 <h3>Farmers Upload Products</h3>
                 <p>Farmers list their crops directly on the platform.</p>
             </div>
             <div class="card">
-                <img src="f3.jpeg" alt="Order">
+                <img src="{% static 'f3.jpeg' %}" alt="Order">
                 <h3>Buyers Place Orders</h3>
                 <p>Buyers browse products and place orders easily.</p>
             </div>
             <div class="card">
-                <img src="download (3).jpeg" alt="Delivery">
+                <img src="{% static 'download (3).jpeg' %}" alt="Delivery">
                 <h3>Direct Delivery</h3>
                 <p>Products are delivered from local hubs to buyers.</p>
             </div>
@@ -55,31 +57,31 @@
         <h2>Featured Products</h2>
         <div class="products">
             <div class="product-card">
-                <img src="t.jpeg" alt="Tomatoes">
+                <img src="{% static 't.jpeg' %}" alt="Tomatoes">
                 <h3>Fresh Tomatoes</h3>
                 <p>Price: $2/kg</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="p.jpeg" alt="Potatoes">
+                <img src="{% static 'p.jpeg' %}" alt="Potatoes">
                 <h3>Potatoes</h3>
                 <p>Price: $1.5/kg</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="c.jpeg" alt="Carrots">
+                <img src="{% static 'c.jpeg' %}" alt="Carrots">
                 <h3>Carrots</h3>
                 <p>Price: $2.5/kg</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="c1.jpeg" alt="Carrots">
+                <img src="{% static 'c1.jpeg' %}" alt="Carrots">
                 <h3>Cabbage</h3>
                 <p>Price: $2.5/kg</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="b.jpeg" alt="Carrots">
+                <img src="{% static 'b.jpeg' %}" alt="Carrots">
                 <h3>Bringle</h3>
                 <p>Price: $2.5/kg</p>
                 <button>Add to Cart</button>
@@ -92,17 +94,17 @@
         <h2>Why Choose Farm2Market?</h2>
         <div class="benefits">
             <div class="card">
-                <img src="f4.jpeg" alt="Fair Price">
+                <img src="{% static 'f4.jpeg' %}" alt="Fair Price">
                 <h3>Fair Prices</h3>
                 <p>Direct sales ensure farmers earn more and buyers pay less.</p>
             </div>
             <div class="card">
-                <img src="t1.jpeg" alt="Transparency">
+                <img src="{% static 't1.jpeg' %}" alt="Transparency">
                 <h3>Price Transparency</h3>
                 <p>Know the exact cost and avoid hidden charges.</p>
             </div>
             <div class="card">
-                <img src="d.jpg" alt="Tracking">
+                <img src="{% static 'd.jpeg' %}" alt="Tracking">
                 <h3>Order Tracking</h3>
                 <p>Track your order from farm to your doorstep.</p>
             </div>

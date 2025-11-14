@@ -14,14 +14,17 @@ int main() {
     string keyword;
     int search_type;
 
-    // Read inputs from stdin (sent by Django)
-    cin >> keyword >> search_type;
+    getline(cin, keyword);
+
+    cin >> search_type;
 
     vector<Farmer> farmers = {
         {"Ali Khan", "Wheat", "Punjab", 120},
         {"Ahmed Raza", "Wheat", "Sindh", 115},
         {"Sana", "Rice", "Balochistan", 150},
-        {"Zara", "Rice", "Punjab", 130}
+        {"Zara", "Rice", "Punjab", 130},
+        {"Asad", "Barley","Sialkot",300},
+        {"Fatima",	"Rice","Punjab",200.0}
     };
 
     bool found = false;
